@@ -1,0 +1,84 @@
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Header styling */
+header {
+    background-color: #f0650e;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #0d45b5;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Logo styling */
+.rrvlogo {
+    width: 5%;
+}
+
+/* Featured Products styling */
+.featured-products {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures products stay in a single row */
+    overflow-x: auto; /* Adds a horizontal scrollbar if needed */
+}
+
+/* Product Card styling */
+.product-card {
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%; /* Make sure the image doesn't exceed the container width */
+}
+
+/* Button styling */
+.product-card button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #45a049;
+}
