@@ -1,8 +1,8 @@
 <?php
-$host = "Salvadors-MacBook.local";
-$username = "rrv_admin";
-$password = "rrv_password";
-$database = "rrv_schema";
+$db_host="cs4413-mysql-server.mysql.database.azure.com";
+$db_user="rrvadmin";
+$db_pass="roadrunnervintagecs4413";
+$db_name="rrv_schema";
 
 $conn = new mysqli($host, $username, $password, $database);
 
