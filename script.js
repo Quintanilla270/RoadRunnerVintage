@@ -3,7 +3,7 @@
 // Function to fetch products asynchronously
 async function fetchProducts() {
     try {
-        const response = await fetch('php/get_products.php');
+        const response = await fetch('/php/get_products.php');
         const products = await response.json();
         
         // Call a function to populate the products on the page
