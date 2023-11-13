@@ -10,12 +10,16 @@ $db_name="rrv_schema";
 
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
-if (mysqli_connect_errno())
-{
-    echo 'Connection to database failed:'.mysqli_connect_error();
-    exit();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-echo "database connection success<br>";
-echo "<strong>now showing results from a database query...</strong>";
+// if (mysqli_connect_errno())
+// {
+//     echo 'Connection to database failed:'.mysqli_connect_error();
+//     exit();
+// }
+
+// echo "database connection success<br>";
+// echo "<strong>now showing results from a database query...</strong>";
 ?>
