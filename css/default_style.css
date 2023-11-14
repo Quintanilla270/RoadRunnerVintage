@@ -70,6 +70,23 @@ footer {
     max-width: 100%; /* Make sure the image doesn't exceed the container width */
 }
 
+.cart-items {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cart Item styling */
+.cart-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-item img {
+    max-width: 20%;
+}
+
 /* Button styling */
 .product-card button {
     background-color: #4caf50;
