@@ -31,6 +31,9 @@ function sortProducts(products, sortingOption) {
 function displayProducts(products) {
     const featuredProductsSection = document.querySelector('.featured-products');
 
+    // Clear the existing content of the featured products section
+    featuredProductsSection.innerHTML = '';
+
     products.forEach(product => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
