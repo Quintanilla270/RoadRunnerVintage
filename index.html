@@ -9,13 +9,11 @@
 <body>
     <!-- Header Section -->
     <header>
-        <!-- Include your logo and navigation here -->
-        <!-- Example: -->
         <img class="rrvlogo" src="images/rrvlogo.jpg" alt="RRV Logo">
         <p>Road Runner Vintage</p>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <!-- Add more navigation items as needed -->
             </ul>
@@ -28,19 +26,23 @@
         <!-- Inside the featured-products section -->
         <h2>Featured Products</h2>
         <section class="featured-products">
-            <script src="script.js"></script>
+            <script src="/scripts/get_featured_products.js"></script>
         </section>
 
 
         <section class="sorting-options">
-            <!-- Add sorting options like dropdowns or buttons here -->
+            <label for="sort-products">Sort by:</label>
+            <select id="sort-products">
+                <option value="latest">Latest</option>
+                <option value="price-low-to-high">Price: Low to High</option>
+                <option value="price-high-to-low">Price: High to Low</option>
+                <!-- Add more sorting options as needed -->
+            </select>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <!-- Include footer navigation, copyright info, etc. here -->
-        <!-- Example: -->
         <nav>
             <ul>
                 <li><a href="#">Privacy Policy</a></li>
