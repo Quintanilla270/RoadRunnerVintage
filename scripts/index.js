@@ -73,31 +73,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function addToCart(product) {
-        const existingProduct = shoppingCart.find(item => item.name === product.name);
-        let existingProductCount = 0;
-        shoppingCart.forEach(item => { existingProductCount = 1 * item.count; });
+        console.log("Product requested:");
+        console.log(product);
+        var existingProduct = shoppingCart.find(item => item.name === product.name);
 
         if (existingProduct) {
+            console.log("Existing product [" + existingProduct.name + "]");
             // If the desired quantity is less than or equal to the product's availability, increment the count
-            if (existingProductCount < product.quantity_available) {
-                console.log("Adding existing product..." + existingProduct.name);
+            if (existingProduct.count < existingProduct.maxqty) {
+                console.log("Adding existing product [" + existingProduct.name + "]");
                 existingProduct.count++;
                 cartCount++;
                 updateCartDisplay();
                 updateSessionStorage();
             } else {
                 window.alert("Warning: Cannot add more items than quantity availability!");
+                console.log("Product [" + product.name + "] was not added.");
             }
         } else {
+            console.log("New product [" + product.name + "]");
+            console.log(product);
             // If the desired quantity is less than or equal to the product's availability, add the product to the cart
             if (product.quantity_available > 0) {
-                console.log("Adding new product..." + product.name);
+                console.log("Adding new product... " + product.name);
                 shoppingCart.push({
                     name: product.name,
-                    price: product.price,
-                    image: product.image_url,
-                    maxqty: product.quantity_available,
-                    count: 1
+                    price: parseFloat(product.price),
+                    maxqty: parseInt(product.quantity_available),
+                    count: 1,
+                    image: product.image_url
                 });
                 cartCount++;
                 updateCartDisplay();

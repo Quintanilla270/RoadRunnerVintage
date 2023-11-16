@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (storedCart.length == 0) {
             console.log(storedCart.length);
             const cartItems = document.querySelector('.cart-items');
-            cartItems.innerHTML = '<h3>Your cart is empty!</h3>';
+            cartItems.innerHTML = `
+            <h3>Your cart is empty!</h3>
+            <br />
+            <h3>Check out our <a href="index.html">nostalgic catalog</a>!</h3>
+            `;
         } else {
             displayCartContents();
         }
@@ -34,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p>Qty: ${product.count}</p>
-                <p>Price: $${product.price * product.count}</p>
+                <p>Price: $${(product.price * product.count).toFixed(2)}</p>
                 <button class="remove-button">Remove</button>
             `;
 
@@ -42,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             removeButton.addEventListener('click', function() {
                 removeFromCart(product);
                 displayCartContents();
+                location.reload();
             });
 
             totalItems += product.count;
