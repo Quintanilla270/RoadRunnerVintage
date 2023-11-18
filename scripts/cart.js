@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const subtotalItemsElement = document.getElementById('subtotal');
     const totalItemsElement = document.getElementById('total-items');
     const totalPriceElement = document.getElementById('total-price');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const loginLink = document.getElementById('login-link');
 
     const storedCart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
@@ -11,9 +13,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (storedCart.length == 0) {
             console.log(storedCart.length);
             const cartItems = document.querySelector('.cart-items');
-            cartItems.innerHTML = '<h3>Your cart is empty!</h3>';
+            cartItems.innerHTML = `
+            <h3>Your cart is empty!</h3>
+            <br />
+            <h3>Check out our <a href="index.html">nostalgic catalog</a>!</h3>
+            `;
         } else {
             displayCartContents();
+        }
+    });
+
+    checkoutBtn.addEventListener('click', function() {
+        if (!isLoggedIn()) {
+            sessionStorage.setItem('redirectFrom', 'checkout');
+            window.location.href = 'login.html';
+        } else {
+            alert('Checkout logic goes here');
         }
     });
 
@@ -34,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p>Qty: ${product.count}</p>
-                <p>Price: $${product.price * product.count}</p>
+                <p>Price: $${(product.price * product.count).toFixed(2)}</p>
                 <button class="remove-button">Remove</button>
             `;
 
@@ -42,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             removeButton.addEventListener('click', function() {
                 removeFromCart(product);
                 displayCartContents();
+                location.reload();
             });
 
             totalItems += product.count;
@@ -59,5 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const storedCart = JSON.parse(sessionStorage.getItem('cart')) || [];
         const updatedCart = storedCart.filter(item => item.name !== product.name);
         sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+
+    function isLoggedIn() {
+        return sessionStorage.getItem('user') !== null;
     }
 });

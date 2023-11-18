@@ -15,6 +15,12 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a id="cart-link" href="cart.html">Cart (0)</a></li>
+                <li id="login-status" style="display: none;">
+                    <button id="logout-btn">Logout</button>
+                </li>
+                <li id="logout-status" style="display: none;">
+                    <button id="login-btn">Login</button>
+                </li>
                 <!-- Add more navigation items as needed -->
             </ul>
         </nav>
@@ -27,13 +33,25 @@
         <h2>Featured Products</h2>
         <section class="featured-products"></section>
 
-        <section class="sorting-options">
-            <label for="sort-products">Sort by:</label>
-            <select id="sort-products">
+        <section class="sorting-options" data-section="featured-products">
+            <label for="sort-featured">Sort by:</label>
+            <select id="sort-featured">
                 <option value="latest">Latest</option>
                 <option value="price-low-to-high">Price: Low to High</option>
                 <option value="price-high-to-low">Price: High to Low</option>
-                <!-- Add more sorting options as needed -->
+            </select>
+        </section>
+
+        <!-- Inside the all-products section -->
+        <h2>All Products</h2>
+        <section class="all-products"></section>
+
+        <section class="sorting-options" data-section="all-products">
+            <label for="sort-all">Sort by:</label>
+            <select id="sort-all">
+                <option value="latest">Latest</option>
+                <option value="price-low-to-high">Price: Low to High</option>
+                <option value="price-high-to-low">Price: High to Low</option>
             </select>
         </section>
     </main>
@@ -51,5 +69,6 @@
     </footer>
 
     <script src="scripts/index.js"></script>
+    <script src="scripts/login_status.js"></script>
 </body>
 </html>
