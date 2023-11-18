@@ -52,22 +52,41 @@ footer {
 }
 
 /* Featured Products styling */
-.featured-products {
+.featured-products, .all-products {
     display: flex;
-    flex-wrap: nowrap; /* Ensures products stay in a single row */
-    overflow-x: auto; /* Adds a horizontal scrollbar if needed */
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 /* Product Card styling */
 .product-card {
+    max-width: 200px;
+    flex: 0 0 auto;
     margin-right: 20px;
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
 }
 
+.featured-products, .all-products {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.featured-products .product-card,
+.all-products .product-card {
+    margin-right: 10px;
+}
+
 .product-card img {
-    max-width: 100%; /* Make sure the image doesn't exceed the container width */
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        margin-right: 0;
+    }
 }
 
 .cart-items {
