@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: `username=${username}&password=${password}`,
+            body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response:', response);
+            return response.json();
+        })        
         .then(data => {
             if (data.success) {
                 console.log("Updating [" + username + "] login session storage...")
