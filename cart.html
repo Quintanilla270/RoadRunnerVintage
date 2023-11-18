@@ -13,6 +13,12 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li id="login-status" style="display: none;">
+                    <button id="logout-btn">Logout</button>
+                </li>
+                <li id="logout-status" style="display: none;">
+                    <button id="login-btn">Login</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -28,6 +34,7 @@
                 <h3>Cart Summary</h3>
                 <p>Total Items: <span id="total-items"></span></p>
                 <p>Total Price: $<span id="total-price"></span></p>
+                <button id="checkout-btn">Checkout</button>
             </div>
         </section>
     </main>
@@ -45,5 +52,6 @@
 
     <!-- <script src="/scripts/index.js"></script> -->
     <script src="/scripts/cart.js"></script>
+    <script src="/scripts/login_status.js"></script>
 </body>
 </html>

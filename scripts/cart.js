@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const subtotalItemsElement = document.getElementById('subtotal');
     const totalItemsElement = document.getElementById('total-items');
     const totalPriceElement = document.getElementById('total-price');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const loginLink = document.getElementById('login-link');
 
     const storedCart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
@@ -18,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         } else {
             displayCartContents();
+        }
+    });
+
+    checkoutBtn.addEventListener('click', function() {
+        if (!isLoggedIn()) {
+            sessionStorage.setItem('redirectFrom', 'checkout');
+            window.location.href = 'login.html';
+        } else {
+            alert('Checkout logic goes here');
         }
     });
 
@@ -64,5 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const storedCart = JSON.parse(sessionStorage.getItem('cart')) || [];
         const updatedCart = storedCart.filter(item => item.name !== product.name);
         sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+
+    function isLoggedIn() {
+        return sessionStorage.getItem('user') !== null;
     }
 });
