@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             console.log('Response:', response);
-            return response.json();
+            return response.text();
+            //return response.json();
         })        
         .then(data => {
+            console.log('Data:', data);
+            data = JSON.parse(data);
+            
             if (data.success) {
                 console.log("Updating [" + username + "] login session storage...")
                 sessionStorage.setItem('user', username);
@@ -27,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     window.location.href = sessionStorage.getItem('redirectFrom');
                 }
-                
             } else {
                 alert(data.message);
             }
@@ -36,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error:', error);
         });
     });
-
 
     if (sessionStorage.getItem('redirectFrom') == "checkout") {
         alert('Please login to continue checkout.');
