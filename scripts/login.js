@@ -6,10 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         // Send a POST request to login_handler.php
+        /// updating content-type from application/x-www-form-urlencoded
         fetch('/php/login_handler.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             },
             body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
         })
