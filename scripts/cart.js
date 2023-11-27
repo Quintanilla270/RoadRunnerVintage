@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     checkoutBtn.addEventListener('click', function() {
         if (!isLoggedIn()) {
-            sessionStorage.setItem('redirectFrom', 'checkout');
+            sessionStorage.setItem('redirectFrom', 'cart');
             window.location.href = 'login.html';
         } else {
             alert('Checkout logic goes here');

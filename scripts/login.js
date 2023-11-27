@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Updating [" + username + "] login session storage...")
                 sessionStorage.setItem('user', username);
 
-                if (sessionStorage.getItem('redirectFrom') == "checkout") {
+                if (sessionStorage.getItem('redirectFrom') == "cart") {
                     window.location.href = 'cart.html';
                 } else {
                     window.location.href = sessionStorage.getItem('redirectFrom');
