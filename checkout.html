@@ -1,6 +1,39 @@
 <html>
-    <head></head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/default_style.css">
+        <line rel="stylesheet" href="css/checkout.css"></line>
+        <title>Checkout</title>
+    </head>
     <body>
-        <p>Checkout Page</p>
+        <!-- Header Section -->
+        <header>Checkout</header>
+        <div id="checkout-container" class="checkout-container">
+            <div class="checkout-column">
+                <h3>Order Review</h3>
+                <div id="checkout-review-items"></div>
+            </div>
+            <div class="checkout-column">
+                <h3>Delivery Address</h3>
+                <div id="checkout-delivery-address">
+                    <p>First Name: <span id="firstName"></span></p>
+                    <p>Last Name: <span id="lastName"></span></p>
+                    <p>Address: <span id="address"></span></p>
+                    <p>City: <span id="city"></span></p>
+                    <p>State: <span id="state"></span></p>
+                    <p>Zip Code: <span id="zip"></span></p>
+                </div>
+            </div>
+            <div class="checkout-column">
+                <h3>Order Summary</h3>
+                <div id="checkout-order-summary" class="checkout-order-summary">
+                    <p>Subtotal: $<span id="subtotal"></span></p>
+                    <p>Shipping: $<span id="shipping"></span></p>
+                    <p>Total: $<span id="total"></span></p>
+                </div>
+                <button id="checkout-button" class="checkout-button">Complete Order</button>
+            </div>
+        </div>
     </body>
 </html>

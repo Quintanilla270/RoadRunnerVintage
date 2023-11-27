@@ -1,0 +1,16 @@
+div {
+    display: block;
+}
+
+.checkout_column {
+    float: left;
+    width: calc(33.33333% - 10px)
+}
+
+.checkout_column {
+    background: #fff;
+    padding: 0;
+    border-bottom: 15px solid #eee;
+    margin: 0 auto;
+    max-width: 730px;
+}
