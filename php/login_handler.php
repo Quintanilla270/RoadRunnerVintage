@@ -1,7 +1,7 @@
 <?php
 session_start();
-
 require_once 'rrv_database.php';
+header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
