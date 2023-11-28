@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
         })
-        .then(response => {
-            console.log('Response:', response);
-            return response.text();
-            //return response.json();
-        })        
+        // .then(response => {
+        //     console.log('Response:', response);
+        //     return response.text();
+        //     //return response.json();
+        // })        
         .then(data => {
+            data = JSON.parse(data);
             console.log('Data:', data);
-            // data = JSON.parse(data);
             
             if (data.includes("Login successful")) {
                 console.log("Updating [" + username + "] login session storage...")
