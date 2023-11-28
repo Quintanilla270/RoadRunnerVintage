@@ -23,21 +23,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo json_encode([
                     'success' => false,
-                    'message' => 'Invalid username or password',
+                    'message' => 'Failed to validate with hashed password',
                     'debug' => [
                         'entered_password' => $_POST['password'],
                         'hashed_password' => $hashedPassword,
                         'password_verify_result' => password_verify($_POST['password'], $hashedPassword),
                     ],
                 ]);
-                echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
             }
         } else {
-            echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
+            $hashedPassword = '';
+            echo json_encode([
+                'success' => false,
+                'message' => 'Login user information not found in our data',
+                'debug' => [
+                    'entered_password' => $_POST['password'],
+                    'hashed_password' => $hashedPassword,
+                    'password_verify_result' => password_verify($_POST['password'], $hashedPassword),
+                ],
+            ]);
         }
         $stmt->close();
     } else {
-        echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
+        echo json_encode(['success' => false, 'message' => 'No user or password entered']);
     }
 } else {
     echo json_encode(['success' => false, 'message' => 'Invalid request']);

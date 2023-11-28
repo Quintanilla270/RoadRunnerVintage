@@ -6,11 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         // Send a POST request to login_handler.php
-        /// updating content-type from application/x-www-form-urlencoded
         fetch('/php/login_handler.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
         })
@@ -21,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })        
         .then(data => {
             console.log('Data:', data);
-            data = JSON.parse(data);
+            // data = JSON.parse(data);
             
-            if (data.success) {
+            if (data.includes("Login successful")) {
                 console.log("Updating [" + username + "] login session storage...")
                 sessionStorage.setItem('user', username);
 
-                if (sessionStorage.getItem('redirectFrom') == "checkout") {
+                if (sessionStorage.getItem('redirectFrom') == "cart") {
                     window.location.href = 'cart.html';
                 } else {
                     window.location.href = sessionStorage.getItem('redirectFrom');
@@ -38,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error:', error);
+            alert('An error occurred during login. Please try again.');
         });
     });
 
