@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.setItem('redirectFrom', 'cart');
             window.location.href = 'login.html';
         } else {
-            alert('Checkout logic goes here');
+            sessionStorage.setItem('redirectFrom', 'cart');
+            window.location.href = 'checkout.html';
         }
     });
 
