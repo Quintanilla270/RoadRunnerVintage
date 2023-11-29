@@ -14,3 +14,11 @@ div {
     margin: 0 auto;
     max-width: 730px;
 }
+
+.checkout-container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
