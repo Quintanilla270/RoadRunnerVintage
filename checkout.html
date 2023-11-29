@@ -8,8 +8,16 @@
     </head>
     <body>
         <!-- Header Section -->
-        <h1>Checkout Page</h1>
+        <header>
+             <h1>Checkout Page</h1> 
+             <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
 
+        <!-- Main body section containing Order Review, Delivery Address, and Order Summary-->
         <div id="order-review">
             <h2>Order Review</h2>
             <!-- Add order review content here -->
@@ -26,6 +34,9 @@
 
                 <label for="city">City:</label>
                 <input type="text" id="city" name="city" required>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
 
                 <label for="zipcode">Zip Code:</label>
                 <input type="text" id="zipcode" name="zipcode" required>

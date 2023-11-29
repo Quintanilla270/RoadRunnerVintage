@@ -24,6 +24,10 @@ input, select {
     box-sizing: border-box;
 }
 
+#order-summary {
+    grid-column: span 3; /* Ensure order summary spans all three columns */
+}
+
 button {
     grid-column: span 3;
     background-color: #4caf50;
