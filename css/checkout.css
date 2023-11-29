@@ -1,24 +1,39 @@
-div {
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+label {
     display: block;
+    margin-bottom: 5px;
 }
 
-.checkout_column {
-    float: left;
-    width: calc(33.33333% - 10px)
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-.checkout_column {
-    background: #fff;
-    padding: 0;
-    border-bottom: 15px solid #eee;
-    margin: 0 auto;
-    max-width: 730px;
+button {
+    grid-column: span 3;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.checkout-container {
-    display: flex;
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+button:hover {
+    background-color: #45a049;
 }
