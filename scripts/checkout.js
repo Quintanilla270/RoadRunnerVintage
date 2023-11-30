@@ -6,6 +6,5 @@ function submitOrder() {
     // Make a request to send order to server
     alert('Finalizing order:\n\n' + orderSummaryContent);
 
-    // Uncomment the line below to enable redirection to the order confirmation page
     window.location.href = 'order_confirmation.html';
 }
