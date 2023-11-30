@@ -89,20 +89,20 @@ footer {
     }
 }
 
-.cart-items {
+.cart-items, .checkout-items {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Cart Item styling */
-.cart-item {
+/* Cart/Checkout Item styling */
+.cart-item, .checkout-item {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
 }
 
-.cart-item img {
+.cart-item img, .checkout-item img {
     max-width: 20%;
 }
 
