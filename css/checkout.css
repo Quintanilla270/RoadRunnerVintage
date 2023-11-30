@@ -1,9 +1,19 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+}
+
+.checkout-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 label {
@@ -18,12 +28,7 @@ input, select {
     box-sizing: border-box;
 }
 
-#order-summary {
-    grid-column: span 3; /* Ensure order summary spans all three columns */
-}
-
 button {
-    grid-column: span 3;
     background-color: #4caf50;
     color: white;
     padding: 10px 15px;
