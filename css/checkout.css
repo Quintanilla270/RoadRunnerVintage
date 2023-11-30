@@ -1,16 +1,44 @@
-div {
+.checkout-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#order-summary {
+    width: 48%;
+    box-sizing: border-box;
+}
+
+label {
     display: block;
+    margin-bottom: 5px;
 }
 
-.checkout_column {
-    float: left;
-    width: calc(33.33333% - 10px)
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-.checkout_column {
-    background: #fff;
-    padding: 0;
-    border-bottom: 15px solid #eee;
-    margin: 0 auto;
-    max-width: 730px;
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
 }
