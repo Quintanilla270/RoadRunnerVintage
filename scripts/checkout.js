@@ -1,4 +1,4 @@
-function finalizeOrder() {
+function submitOrder() {
     // Grab order details from order summary section
     var orderSummary = document.getElementById('order-summary');
     var orderSummaryContent = orderSummary.innerHTML;
