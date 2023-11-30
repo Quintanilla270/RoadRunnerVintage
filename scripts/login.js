@@ -13,12 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
         })
-        // .then(response => {
-        //     console.log('Response:', response);
-        //     return response.text();
-        //     //return response.json();
-        // })        
+        .then(response => response.text())
         .then(data => {
+            console.log('Data received:', data); // Add this line to inspect the data
+
             try {
                 data = JSON.parse(data);
                 console.log('Data:', data);
@@ -39,7 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error parsing JSON:', error);
                 alert('An error occurred during login. Please try again.');
             }
-        });        
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            alert('An error occurred during the fetch. Please try again.');
+        });
     });
 
     if (sessionStorage.getItem('redirectFrom') == "checkout") {
