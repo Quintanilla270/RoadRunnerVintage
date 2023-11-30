@@ -19,26 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
         //     //return response.json();
         // })        
         .then(data => {
-            data = JSON.parse(data);
-            console.log('Data:', data);
-            
-            if (data.includes("Login successful")) {
-                console.log("Updating [" + username + "] login session storage...")
-                sessionStorage.setItem('user', username);
-
-                if (sessionStorage.getItem('redirectFrom') == "cart") {
-                    window.location.href = 'cart.html';
+            try {
+                data = JSON.parse(data);
+                console.log('Data:', data);
+        
+                if (data.success) {
+                    console.log("Updating [" + username + "] login session storage...")
+                    sessionStorage.setItem('user', username);
+        
+                    if (sessionStorage.getItem('redirectFrom') == "cart") {
+                        window.location.href = 'cart.html';
+                    } else {
+                        window.location.href = sessionStorage.getItem('redirectFrom');
+                    }
                 } else {
-                    window.location.href = sessionStorage.getItem('redirectFrom');
+                    alert(data.message);
                 }
-            } else {
-                alert(data.message);
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+                alert('An error occurred during login. Please try again.');
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred during login. Please try again.');
-        });
+        });        
     });
 
     if (sessionStorage.getItem('redirectFrom') == "checkout") {
