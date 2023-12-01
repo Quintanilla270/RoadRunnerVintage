@@ -3,6 +3,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/default_style.css">
+        <script src="/scripts/order_confirmation.js"></script>
+
         <title>Checkout Page</title>
     </head>
     <body>
@@ -22,11 +24,12 @@
             </div>
     
             <div class="customer-details">
-                <h2>Customer Details</h2>
-                <p><strong>Name:</strong></p>
-                <p><strong>Email:</strong></p>
-                <p><strong>Address:</strong></p>
-                <p><strong>Order Number:</strong><span class="order-number"></span></p>
+                <h2><strong>Customer Details</strong></h2>
+                <p><strong>Name: </strong><span id="fname"></span></p>
+                <p><strong>Address: </strong><span id="address"></span></p>
+                <p><strong>City: </strong><span id="city"></span></p>
+                <p><strong>State: </strong><span id="state"></span></p>
+                <p><strong>Zip Code: </strong><span id="zip"></span></p>
             </div>
     
             <div class="order-summary">
