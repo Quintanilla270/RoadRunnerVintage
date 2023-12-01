@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const subtotalPriceElement = document.getElementById('subtotal');
     const shippingPriceElement = document.getElementById('shipping');
     const totalPriceElement = document.getElementById('total');
-    const checkoutBtn = document.getElementById('checkout-btn');
+    const checkoutBtn = document.getElementById('checkout-button');
     const isLoggedIn = sessionStorage.getItem('user') !== null;
     const storedCart = JSON.parse(sessionStorage.getItem('cart')) || [];
     
