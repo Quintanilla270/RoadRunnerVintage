@@ -15,13 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     checkoutBtn.addEventListener('click', function() {
-        if (!isLoggedIn()) {
-            sessionStorage.setItem('redirectFrom', 'checkout');
-            window.location.href = 'login.html';
-        } else {
-            sessionStorage.setItem('redirectFrom', 'checkout');
-            window.location.href = 'order_confirmation.html';
-        }
+        sessionStorage.setItem('redirectFrom', 'checkout');
+        window.location.href = 'order_confirmation.html';
     });
 
     function submitOrder() {
