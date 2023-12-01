@@ -89,13 +89,13 @@ footer {
     }
 }
 
-.cart-items, .checkout-items {
+.cart-items, .checkout-items, .container {
     max-width: 800px;
     margin: 0 auto;
 }
 
 /* Cart/Checkout Item styling */
-.cart-item, .checkout-item {
+.cart-item, .checkout-item, .container {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ddd;
