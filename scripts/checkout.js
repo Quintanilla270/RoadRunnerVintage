@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
         displayCartContents();
     });
 
+    checkoutBtn.addEventListener('click', function() {
+        if (!isLoggedIn()) {
+            sessionStorage.setItem('redirectFrom', 'checkout');
+            window.location.href = 'login.html';
+        } else {
+            sessionStorage.setItem('redirectFrom', 'checkout');
+            window.location.href = 'order_confirmation.html';
+        }
+    });
+
     function submitOrder() {
         // Grab order details from order summary section
         var orderSummary = document.getElementById('order-summary');
