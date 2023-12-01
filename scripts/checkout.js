@@ -69,32 +69,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: `username=${encodeURIComponent(username)}`,
-        })
-        .then(response => {
-            console.log('Response:', response);
-            return response.text();
-            //return response.json();
-        })        
+        })      
+        .then(response => response.text())
         .then(data => {
-            console.log('Data:', data);
-            // data = JSON.parse(data);
-            
-            if (data.includes("Login successful")) {
-                console.log("Updating [" + username + "] login session storage...")
-                sessionStorage.setItem('user', username);
+            try {
+                const userData = JSON.parse(data);
+                const fname = document.getElementById('fname');
+                const address = document.getElementById('address');
+                const city = document.getElementById('city');
+                const state = document.getElementById('state');
+                const zip = document.getElementById('zip');
 
-                if (sessionStorage.getItem('redirectFrom') == "cart") {
-                    window.location.href = 'cart.html';
+                console.log('Data:', userData);
+                console.log('Data:', userData.fname);
+
+                if (userData.success) {
+                    console.log("Updating [" + username + "] login session storage...")
+                    sessionStorage.setItem('user', username);
+
+                    fname.textContent = userData.fname + " " + userData.lname;
+                    address.textContent = userData.address;
+                    city.textContent = userData.city;
+                    state.textContent = userData.state;
+                    zip.textContent = userData.zipcode;
+
                 } else {
-                    window.location.href = sessionStorage.getItem('redirectFrom');
+                    alert(`User is not logged in. ${userData.message}`);
                 }
-            } else {
-                alert(data.message);
+            } catch (error) {
+                // Handle the case where the response is not valid JSON
+                console.error('Error parsing JSON:', error);
+                alert('An error occurred during login. Please try again.');
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred during login. Please try again.');
+            console.error('Fetch error:', error);
+            alert('An error occurred during the fetch. Please try again.');
         });
     } else {
         sessionStorage.setItem('redirectFrom', 'checkout');
