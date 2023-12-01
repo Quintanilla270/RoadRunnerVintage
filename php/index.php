@@ -12,11 +12,11 @@ if (!isset($_COOKIE[$cookie_name])) {
     setcookie($cookie_name, $cookie_value, $expiration_time);
 
     // Tell the user that the cookie has been set
-    echo "The cookie has been set.";
+    alert("The cookie has been set.");
 } 
 else {
     // Tell the user that the cookie is already set
-    echo "The cookie is already set.";
+    alert("The cookie is already set.");
 }
 
 ?>
