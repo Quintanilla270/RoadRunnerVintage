@@ -157,6 +157,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fetch products when the page loads
     window.addEventListener('load', function () {
         fetchProducts('all');
-        fetch('index.php');
     });
+
+    function callPhpFile() {
+        fetch('index.php')
+            .then(response => response.text())
+            .then(data => {
+                // Display the result in an HTML element with id 'result'
+                document.getElementById('result').innerHTML = data;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    
 });
