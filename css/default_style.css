@@ -46,9 +46,16 @@ footer {
     text-align: center;
 }
 
-/* Logo styling */
+.top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding-left: 30%;
+}
+
 .rrvlogo {
-    width: 5%;
+    width: 50%;
 }
 
 /* Featured Products styling */
