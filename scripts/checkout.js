@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             checkoutItems += product.count;
             subtotalPrice += product.price * product.count
-            totalPrice += subtotalPrice + shippingPrice;
+            totalPrice = subtotalPrice + shippingPrice;
 
             checkoutItemList.appendChild(checkoutItem);
         });
